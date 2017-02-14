@@ -18,7 +18,7 @@ RUN apk update \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && rm -rf /tmp/*
 
-COPY ./app/php.ini /usr/local/etc/php/
+COPY php.ini /usr/local/etc/php/
 
 USER www-data
 
