@@ -3,7 +3,7 @@ FROM php:7.1-fpm-alpine
 MAINTAINER Zaher Ghaibeh <z@zah.me>
 
 RUN apk update \
-    && apk add  --no-cache git mysql-client curl libmcrypt libmcrypt-dev \
+    && apk add  --no-cache git mysql-client curl libmcrypt libmcrypt-dev openssh-client \
     libxml2-dev freetype-dev libpng-dev libjpeg-turbo-dev g++ make autoconf \
     && docker-php-source extract \
     && pecl install xdebug redis \
