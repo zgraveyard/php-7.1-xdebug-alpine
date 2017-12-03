@@ -2,49 +2,54 @@
 [![](https://images.microbadger.com/badges/image/zaherg/php-7.1-xdebug-alpine.svg)](https://microbadger.com/images/zaherg/php-7.1-xdebug-alpine "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/zaherg/php-7.1-xdebug-alpine.svg)](https://microbadger.com/images/zaherg/php-7.1-xdebug-alpine "Get your own version badge on microbadger.com")
 
+## Image description
 
 This image contain php-7.1 based on alpine with xDebug enabled and Composer installed
 
-Also it has the following modules:
+## Installed modules information
+
+It has the following modules:
 
 [PHP Modules]
-Core
-ctype
-curl
-date
-dom
-fileinfo
-filter
-ftp
-hash
-iconv
-json
-libxml
-mbstring
-mcrypt
-mysqlnd
-openssl
-pcre
-PDO
-pdo_mysql
-pdo_sqlite
-Phar
-posix
-readline
-redis
-Reflection
-session
-SimpleXML
-soap
-SPL
-sqlite3
-standard
-tokenizer
-xdebug
-xml
-xmlreader
-xmlwriter
-zlib
+
+1. Core
+1. ctype
+1. curl
+1. date
+1. dom
+1. fileinfo
+1. filter
+1. ftp
+1. hash
+1. iconv
+1. json
+1. libxml
+1. mbstring
+1. mcrypt
+1. mysqlnd
+1. openssl
+1. pcre
+1. PDO
+1. pdo_mysql
+1. pdo_sqlite
+1. Phar
+1. posix
+1. readline
+1. redis
+1. Reflection
+1. session
+1. SimpleXML
+1. soap
+1. SPL
+1. sqlite3
+1. standard
+1. tokenizer
+1. xdebug
+1. xml
+1. xmlreader
+1. xmlwriter
+1. zlib
 
 [Zend Modules]
-Xdebug
+
+1. Xdebug
