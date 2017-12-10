@@ -1,6 +1,13 @@
 FROM php:7.1-fpm-alpine
 
-MAINTAINER Zaher Ghaibeh <z@zah.me>
+LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
+      Description="Lightweight php 7.1 container based on alpine with xDebug enabled, SOPAP extensions enabled & composer installed." \
+      org.label-schema.name="php-7.1-xdebug-alpine" \
+      org.label-schema.description="Lightweight php 7.1 container based on alpine with xDebug enabled, SOPAP extensions enabled & composer installed." \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/linuxjuggler/php-7.1-xdebug-alpine.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.schema-version="1.0.0"
 
 RUN apk update \
     && apk add  --no-cache git mysql-client curl openssh-client icu libpng libjpeg-turbo libmcrypt libmcrypt-dev \
