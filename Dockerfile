@@ -2,6 +2,7 @@ FROM php:7.1-fpm-alpine
 
 ARG BUILD_DATE
 ARG VCS_REF
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       Description="Lightweight php 7.1 container based on alpine with xDebug enabled, SOPAP extensions enabled & composer installed." \
