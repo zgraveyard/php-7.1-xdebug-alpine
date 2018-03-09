@@ -4,6 +4,28 @@
 
 This image contain php-7.1 based on alpine with xDebug enabled and Composer installed
 
+## Run the image:
+
+By default xdebug is enabled, to disable it you need to create a `.env` file which should contain the following variables, but remember to change the value based one what you want to achieve:
+
+```
+PHP_XDEBUG_DEFAULT_ENABLE=0
+PHP_XDEBUG_REMOTE_ENABLE=0
+PHP_XDEBUG_REMOTE_HOST=127.0.0.1
+PHP_XDEBUG_REMOTE_PORT=9001
+PHP_XDEBUG_REMOTE_AUTO_START=0
+PHP_XDEBUG_REMOTE_CONNECT_BACK=0
+PHP_XDEBUG_IDEKEY=docker
+PHP_XDEBUG_PROFILER_ENABLE=0
+PHP_XDEBUG_PROFILER_OUTPUT_DIR=/tmp
+```
+
+Then run the docker and specify the env file that you have created like this
+
+```
+docker run --env-file .env -p 80:80 zaherg/php-7.1-xdebug-alpine
+```
+
 ## Installed modules information
 
 It has the following modules:

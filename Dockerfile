@@ -2,7 +2,17 @@ FROM php:7.1-fpm-alpine
 
 ARG BUILD_DATE
 ARG VCS_REF
+
 ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV PHP_XDEBUG_DEFAULT_ENABLE ${PHP_XDEBUG_DEFAULT_ENABLE:-1}
+ENV PHP_XDEBUG_REMOTE_ENABLE ${PHP_XDEBUG_REMOTE_ENABLE:-1}
+ENV PHP_XDEBUG_REMOTE_HOST ${PHP_XDEBUG_REMOTE_HOST:-"127.0.0.1"}
+ENV PHP_XDEBUG_REMOTE_PORT ${PHP_XDEBUG_REMOTE_PORT:-9000}
+ENV PHP_XDEBUG_REMOTE_AUTO_START ${PHP_XDEBUG_REMOTE_AUTO_START:-1}
+ENV PHP_XDEBUG_REMOTE_CONNECT_BACK ${PHP_XDEBUG_REMOTE_CONNECT_BACK:-1}
+ENV PHP_XDEBUG_IDEKEY ${PHP_XDEBUG_IDEKEY:-docker}
+ENV PHP_XDEBUG_PROFILER_ENABLE ${PHP_XDEBUG_PROFILER_ENABLE:-0}
+ENV PHP_XDEBUG_PROFILER_OUTPUT_DIR ${PHP_XDEBUG_PROFILER_OUTPUT_DIR:-"/tmp"}
 
 LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       Description="Lightweight php 7.1 container based on alpine with xDebug enabled, SOPAP extensions enabled & composer installed." \
@@ -22,17 +32,12 @@ RUN apk update \
     && docker-php-ext-enable xdebug redis \
     && docker-php-source delete \
     && docker-php-ext-install mcrypt pdo_mysql soap intl zip \
-    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_port=9000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_handler=dbgp" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_connect_back=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apk del build-dependencies \
     && apk del libmcrypt-dev \
     && rm -rf /tmp/*
 
-# COPY php.ini /usr/local/etc/php/
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug-dev.ini
 
 USER www-data
 
