@@ -2,7 +2,7 @@
 
 ## Recommendation
 
-As you know PHP 7.2 has been released while ago, so I recommend that you start using it ASAP, and you can get the same functionality that you have in this image by using my PHP7.2 image [https://hub.docker.com/r/zaherg/php-7.0-xdebug-alpine/](https://hub.docker.com/r/zaherg/php-7.0-xdebug-alpine/)
+As you know PHP 7.2 has been released while ago, so I recommend that you start using it ASAP, and you can get the same functionality that you have in this image by using my PHP7.2 image [https://hub.docker.com/r/zaherg/php-7.2-xdebug-alpine/](https://hub.docker.com/r/zaherg/php-7.2-xdebug-alpine/)
 
 ## Image description
 
