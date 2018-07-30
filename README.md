@@ -1,5 +1,9 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/zaherg/php-7.1-xdebug-alpine.svg)](https://hub.docker.com/r/zaherg/php-7.1-xdebug-alpine/) [![](https://images.microbadger.com/badges/image/zaherg/php-7.1-xdebug-alpine.svg)](https://microbadger.com/images/zaherg/php-7.1-xdebug-alpine "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/zaherg/php-7.1-xdebug-alpine.svg)](https://microbadger.com/images/zaherg/php-7.1-xdebug-alpine "Get your own version badge on microbadger.com")
 
+## Recommendation
+
+As you know PHP 7.2 has been released while ago, so I recommend that you start using it ASAP, and you can get the same functionality that you have in this image by using my PHP7.2 image [https://hub.docker.com/r/zaherg/php-7.2-xdebug-alpine/](https://hub.docker.com/r/zaherg/php-7.2-xdebug-alpine/)
+
 ## Image description
 
 This image contain php-7.1 based on alpine with xDebug enabled and Composer installed
