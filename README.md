@@ -8,6 +8,13 @@ As you know PHP 7.2 has been released while ago, so I recommend that you start u
 
 This image contain php-7.1 based on alpine with xDebug enabled and Composer installed
 
+```
+PHP 7.1.24 (fpm-fcgi) (built: Nov 16 2018 05:54:39)
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+    with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+```
+
 ## Runing the image:
 
 By default xdebug is enabled, to disable it you need to create a `.env` file which should contain the following variables, but remember to change the value based one what you want to achieve:
@@ -64,6 +71,7 @@ It has the following modules:
 1. session
 1. SimpleXML
 1. soap
+1. sodium
 1. SPL
 1. sqlite3
 1. standard

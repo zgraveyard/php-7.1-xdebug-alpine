@@ -24,12 +24,12 @@ LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       org.label-schema.schema-version="1.0.0"
 
 RUN apk update \
-    && apk add --no-cache git mysql-client curl openssh-client icu libpng libjpeg-turbo libmcrypt libmcrypt-dev pwgen\
-    && apk add --no-cache --virtual build-dependencies icu-dev \
+    && apk add --no-cache git mysql-client curl openssh-client icu libpng libjpeg-turbo libmcrypt libmcrypt-dev libsodium pwgen\
+    && apk add --no-cache --virtual build-dependencies icu-dev libsodium-dev \
     libxml2-dev freetype-dev libpng-dev libjpeg-turbo-dev g++ make autoconf \
     && docker-php-source extract \
-    && pecl install xdebug redis \
-    && docker-php-ext-enable xdebug redis \
+    && pecl install xdebug redis libsodium \
+    && docker-php-ext-enable xdebug redis sodium \
     && docker-php-source delete \
     && docker-php-ext-install mcrypt pdo_mysql soap intl zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
